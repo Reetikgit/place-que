@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html>
+  <title></title>
+<head>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <link href='https://fonts.googleapis.com/css?family=Permanent Marker' rel='stylesheet'>
+  <link href="https://fonts.googleapis.com/css?family=David+Libre|Hind:400,700" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,900' rel='stylesheet' type='text/css'>
+</head>
+<style type="text/css">
+body {
+  font-family: "Roboto";
+  width: 100%;
+  overflow: hidden;
+background: linear-gradient(100deg, rgba(2,0,36,1) 0%, rgba(9,52,121,1) 27%, rgba(0,212,255,1) 100%);
+
+}
+
+.back {
+/*  background: linear-gradient(120grad, #643986, #98aed5);*/
+background: rgb(2,0,36);
+background: linear-gradient(100deg, rgba(2,0,36,1) 0%, rgba(9,52,121,1) 27%, rgba(0,212,255,1) 100%);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.registration-form {
+  width: 345px;
+
+  margin-left: 1%;
+  margin-right: 1%;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0%);
+          transform: translate(-50%, 0%);
+  top: 30%;
+  background: transparent;
+}
+.registration-form header {
+  position: relative;
+  z-index: 4;
+  background: white;
+  padding: 80px 90px;
+  border-radius: 15px 15px 0 0;
+}
+.registration-form header h1 {
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  color: #333;
+  font-size: 23px;
+  text-transform: uppercase;
+  margin: 0;
+}
+.registration-form header p {
+  word-spacing: 0px;
+  color: #9facb6;
+  font-size: 17px;
+  margin: 0;
+  margin-top: 5px;
+}
+.registration-form form {
+  position: relative;
+}
+.registration-form .input-section {
+  width: 100%;
+  position: absolute;
+  display: -webkit-box;
+  display: flex;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  height: 75px;
+  border-radius: 0 0 15px 15px;
+  overflow: hidden;
+  z-index: 2;
+  box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.2);
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+.registration-form .input-section.folded {
+  width: 95%;
+  margin-top: 10px;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  z-index: 1;
+}
+.registration-form .input-section.folded input {
+  background-color: #e9e2c0;
+}
+.registration-form .input-section.folded span {
+  background-color: #e9e2c0;
+}
+.registration-form .input-section.folded + .folded {
+  width: 90%;
+  margin-top: 20px;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  z-index: 0;
+}
+.registration-form .input-section.folded + .folded input {
+  background-color: #e1bcef;
+}
+.registration-form .input-section.folded + .folded span {
+  background-color: #e1bcef;
+}
+.registration-form .input-section.fold-up {
+  margin-top: -75px;
+}
+.registration-form form input {
+  background: white;
+  color: #8f8fd6;
+  width: 80%;
+  border: 0;
+  padding: 20px 40px;
+  margin: 0;
+}
+.registration-form form input:focus {
+  outline: none;
+}
+.registration-form form input::-webkit-input-placeholder {
+  color: #8f8fd6;
+  font-weight: 100;
+}
+.registration-form form input::-moz-placeholder {
+  color: #8f8fd6;
+  font-weight: 100;
+}
+.registration-form form input:-ms-input-placeholder {
+  color: #8f8fd6;
+  font-weight: 100;
+}
+.registration-form form input::-ms-input-placeholder {
+  color: #8f8fd6;
+  font-weight: 100;
+}
+.registration-form form input::placeholder {
+  color: #8f8fd6;
+  font-weight: 100;
+}
+
+.animated-button {
+  width: 20%;
+  background-color: #d4d4ff;
+}
+.animated-button span {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  justify-content: space-around;
+  -webkit-box-align: center;
+          align-items: center;
+  line-height: 75px;
+  text-align: center;
+  height: 75px;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+.animated-button span i {
+  font-size: 25px;
+  color: #9999f8;
+}
+.animated-button .next-button {
+  background: transparent;
+  color: #9999f8;
+  font-weight: 100;
+  width: 100%;
+  border: 0;
+}
+
+.next {
+  margin-top: -75px;
+}
+
+.success {
+  width: 100%;
+  position: absolute;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  height: 75px;
+  border-radius: 0 0 15px 15px;
+  overflow: hidden;
+  z-index: 2;
+  box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.2);
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  background: limegreen;
+  margin-top: -75px;
+}
+.success p {
+  color: white;
+  font-weight: 900;
+  letter-spacing: 2px;
+  font-size: 18px;
+  width: 100%;
+  text-align: center;
+}
+h1 {  font-family: 'Permanent Marker';font-size: 3em;
+  text-align: center;
+  color: white;
+  }
+</style>
+<body>
+
+<div class="back">
+  <h1 style="color: white;">Wink Up</h1>
+</div>
+
+<div class="registration-form">
+  <header>
+    <h1>Sign Up</h1>
+    <p>Fill in all informations</p>
+    <a href="Dash.html"><button>Dash</button></a>
+  </header>
+  <form>
+    <div class="input-section email-section">
+      <input class="email" type="name" id="name" placeholder="ENTER YOUR NAME HERE" autocomplete="off"/>
+      <div class="animated-button"><span class="icon-paper-plane"><i class="fa fa-user"></i></span><span class="next-button email"><i class="fa fa-arrow-up"></i></span></div>
+    </div>
+    <div class="input-section password-section folded">
+      <input class="password" id="number" type="phone" placeholder="ENTER YOUR PHONE NUMBER"/>
+      <div class="animated-button"><span class="icon-lock"><i class="fa fa-phone"></i></span><span class="next-button password"><i class="fa fa-arrow-up"></i></span></div>
+    </div>
+    <div class="input-section password-section folded">
+      <input class="password" id="number" type="phone" placeholder="ENTER YOUR PHONE NUMBER"/>
+      <div class="animated-button"><span class="icon-lock"><i class="fa fa-phone"></i></span><span class="next-button password"><i class="fa fa-arrow-up"></i></span></div>
+    </div>
+    <div class="input-section password-section folded">
+      <input class="password" id="number" type="phone" placeholder="ENTER YOUR PHONE NUMBER"/>
+      <div class="animated-button"><span class="icon-lock"><i class="fa fa-phone"></i></span><span class="next-button password"><i class="fa fa-arrow-up"></i></span></div>
+    </div>
+    <div class="input-section repeat-password-section folded">
+     <input type="file" class="repeat-password" id="photo" placeholder="INSERT"  name="img" accept="image/*" required="Please upload your photo">
+
+
+<!--      <progress value="0" max = "100" id="uploader" > 0%</progress><p id="demo"></p> -->
+      <div class="animated-button"><span class="icon-repeat-lock"><i class="fa fa-file"></i></span><span class="next-button repeat-password" ><i id="onsubmits" class="fa fa-paper-plane"></i></span>
+
+      </div>
+    </div>
+
+    <div class="success">
+      <p> Please Wait..<progress value="0" max = "100" id="uploader" > 0%</progress><p id="demo"></p></p>
+
+    </div>
+  </form>
+</div>
+</body>
+<script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script type="text/javascript">
+
+  $('.email').on("change keyup paste",
+  function(){
+    if($(this).val()){
+      $('.icon-paper-plane').addClass("next");
+    } else {
+      $('.icon-paper-plane').removeClass("next");
+    }
+  }
+);
+
+$('.next-button').hover(
+  function(){
+    $(this).css('cursor', 'pointer');
+  }
+);
+
+$('.next-button.email').click(
+  function(){
+    console.log("Something");
+    $('.email-section').addClass("fold-up");
+    $('.password-section').removeClass("folded");
+  }
+);
+
+$('.password').on("change keyup paste",
+  function(){
+    if($(this).val()){
+      $('.icon-lock').addClass("next");
+    } else {
+      $('.icon-lock').removeClass("next");
+    }
+  }
+);
+
+$('.next-button').hover(
+  function(){
+    $(this).css('cursor', 'pointer');
+  }
+);
+
+$('.next-button.password').click(
+  function(){
+    console.log("Something");
+    $('.password-section').addClass("fold-up");
+    $('.repeat-password-section').removeClass("folded");
+  }
+);
+
+$('.repeat-password').on("change keyup paste",
+  function(){
+
+    if($(this).val()){
+
+      $('.icon-repeat-lock').addClass("next");
+
+
+    } else {
+      $('.icon-repeat-lock').removeClass("next");
+
+    }
+  }
+);
+  count=0;
+$('.next-button.repeat-password').click(
+
+  function(){
+
+
+    $('.repeat-password-section').addClass("fold-up");
+
+      $('.success').css("marginTop", 0);
+    console.log("Something");
+  }
+
+);
+
+function sleep(milliseconds) {
+  var start = new Date().getTime();
+  for (var i = 0; i < 1e7; i++) {
+    if ((new Date().getTime() - start) > milliseconds){
+      break;
+    }
+  }
+}
+
+  var firebaseConfig = {
+    apiKey: "AIzaSyCr1S8ZkSFx2NyyZAtlc60qzO4F2_5CRTQ",
+    authDomain: "wink-c0f76.firebaseapp.com",
+    databaseURL: "https://wink-c0f76.firebaseio.com",
+    projectId: "wink-c0f76",
+    storageBucket: "wink-c0f76.appspot.com",
+    messagingSenderId: "99526553521",
+    appId: "1:99526553521:web:228fd6441a463fcb785790"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  let formMessage2 = firebase.database().ref('winkusers');
+  const  storageService = firebase.storage();
+  var storageRef = firebase.storage().ref();
+
+
+
+photo.addEventListener('change', uploadFile);
+function uploadFile(e){
+
+  name = document.querySelector('#name').value;
+  phone = document.querySelector('#number').value;
+  photo= document.querySelector('#photo').value;
+
+
+
+selectedFile=e.target.files[0];
+
+
+var uploadTask=storageService.ref(selectedFile.name).put(selectedFile);
+
+
+console.log(selectedFile.getDownloadURL);
+uploadTask.on('state_changed', function(snapshot){
+
+var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+uploader.value = percentage;
+
+// Observe state change events such as progress, pause, and resume
+// Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+
+document.getElementById("demo").innerHTML = progress;
+switch (snapshot.state) {
+case firebase.storage.TaskState.PAUSED: // or 'paused'
+document.getElementById("demo").innerHTML = "Upload Paused";
+console.log('Upload is paused');
+break;
+case firebase.storage.TaskState.RUNNING: // or 'running'
+document.getElementById("demo").innerHTML = "File is uploading"+ " "+progress+"%  Please Wait";
+
+break;
+}
+}, function(error) {
+console.log(error);
+// Handle unsuccessful uploads
+}, function() {
+document.getElementById("demo").innerHTML = "Uploaded"+ " "+progress+"%";
+// Handle successful uploads on complete
+// For instance, get the download URL: https://firebasestorage.googleapis.com/...
+uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+console.log('File available at', downloadURL);
+urls = downloadURL;
+  sendMessage(name,phone,urls);
+  sleep(500)
+  window.location="https://reetikgit.github.io/firebaseauth/index.html";
+  });
+  });
+
+
+}
+  // console.log(selectedFile);
+
+
+
+
+  function sendMessage(name,phone,url)
+  {
+
+    let newFormMessage2 = formMessage2.push();
+
+    newFormMessage2.set({
+
+    name: name,
+    Phone:phone,
+    image:url,
+    Messages:"s"
+
+  });
+
+}
+</script>
+</html>
