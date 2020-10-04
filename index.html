@@ -36,7 +36,7 @@ var CLIENT_ID ='922102157069-5i964of8umfrfl1v7vijesuu7e2n2je8.apps.googleusercon
 
     <div class="w3-container  w3-center " id="team" style="">
         <h2 style="color:">place-Que </h2>
-        <p style="color:">Phone Authentication </p>
+        <p style="color:">Phone Authentication(verify)</p>
     </div>
     <div id="loaded" class="hidden">
         <div id="main">
@@ -197,7 +197,7 @@ var CLIENT_ID ='922102157069-5i964of8umfrfl1v7vijesuu7e2n2je8.apps.googleusercon
            writeUserData(userId,name,name1,email,imageURL,phone,imgurl,randomid)
          };
          function writeUserData(userId, name,name1, email,imageUrl,phone,imgurl,randomid) {
-           firebase.database().ref('User').set({
+           firebase.database().ref('User').push().set({
              userId:userId,
              username: name,
              username:name1,
