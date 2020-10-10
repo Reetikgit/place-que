@@ -184,12 +184,15 @@ var CLIENT_ID ='922102157069-5i964of8umfrfl1v7vijesuu7e2n2je8.apps.googleusercon
              document.getElementById('phone').innerHTML = user.phoneNumber;
              document.getElementById('photo').src = photoURL;
              document.getElementById('photo').style.display = 'block';
+		          writeUserData(userId,phone)
            } else {
+		          writeUserData(userId,phone)
              document.getElementById('photo').style.display = 'none';
            }
-           writeUserData(userId,phone)
+    
          };
          function writeUserData(userId,phone) {
+		 alert(8);
 
            firebase.database().ref('User').push().set({
              userId:userId,
