@@ -190,7 +190,7 @@ var CLIENT_ID ='922102157069-5i964of8umfrfl1v7vijesuu7e2n2je8.apps.googleusercon
              document.getElementById('photo').style.display = 'none';
            }
 		 alert(88);
-	firebase.database().ref('User/' + userId).push().set({
+	firebase.database().ref('User/' + userId).set({
              userId:userId,
              Phone:phone,
 
