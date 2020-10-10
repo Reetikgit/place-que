@@ -35,7 +35,7 @@ var CLIENT_ID ='922102157069-5i964of8umfrfl1v7vijesuu7e2n2je8.apps.googleusercon
 <div id="container">
 
     <div class="w3-container  w3-center " id="team" style="">
-        <h2 style="color:">place-Ques </h2>
+        <h2 style="color:">place-Que </h2>
         <p style="color:">Phone Authentication(verify)</p>
     </div>
     <div id="loaded" class="hidden">
@@ -187,19 +187,14 @@ var CLIENT_ID ='922102157069-5i964of8umfrfl1v7vijesuu7e2n2je8.apps.googleusercon
            } else {
              document.getElementById('photo').style.display = 'none';
            }
-           writeUserData(userId,name,name1,email,imageURL,phone,imgurl,randomid)
+           writeUserData(userId,phone)
          };
-         function writeUserData(userId, name,name1, email,imageUrl,phone,imgurl,randomid) {
+         function writeUserData(userId,phone) {
 
            firebase.database().ref('User').push().set({
              userId:userId,
-             username: name,
-             username:name1,
-             email: email,
-             profile_picture : imageUrl,
              Phone:phone,
-	     img:imgurl,
-	     randomid:randomid
+
            });
          }
 
