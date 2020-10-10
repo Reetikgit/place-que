@@ -35,7 +35,7 @@ var CLIENT_ID ='922102157069-5i964of8umfrfl1v7vijesuu7e2n2je8.apps.googleusercon
 <div id="container">
 
     <div class="w3-container  w3-center " id="team" style="">
-        <h2 style="color:">place-Que </h2>
+        <h2 style="color:">place-Ques </h2>
         <p style="color:">Phone Authentication(verify)</p>
     </div>
     <div id="loaded" class="hidden">
@@ -169,19 +169,12 @@ var CLIENT_ID ='922102157069-5i964of8umfrfl1v7vijesuu7e2n2je8.apps.googleusercon
            var email = firebase.auth().currentUser.email;
            var imageURL=firebase.auth().currentUser.photoURL;
            var phone=firebase.auth().currentUser.phoneNumber;
-
-
-         // ref.child("phonenumber").setValue(number);
-//            document.getElementById('user-signed-in').style.display = 'block';
-//            document.getElementById('user-signed-out').style.display = 'none';
-               document.getElementById('name').textContent = user.displayName;
-               document.getElementById('email').textContent = user.email;
-               document.getElementById('phone').textContent = user.phoneNumber;
+           document.getElementById('name').textContent = user.displayName;
+           document.getElementById('email').textContent = user.email;
+           document.getElementById('phone').textContent = user.phoneNumber;
            if (user.photoURL) {
              var photoURL = user.photoURL;
-             // Append size to the photo URL for Google hosted images to avoid requesting
-             // the image with its original resolution (using more bandwidth than needed)
-             // when it is going to be presented in smaller size.
+
              if ((photoURL.indexOf('googleusercontent.com') != -1) ||
                  (photoURL.indexOf('ggpht.com') != -1)) {
                photoURL = photoURL + '?sz=' +
@@ -197,6 +190,7 @@ var CLIENT_ID ='922102157069-5i964of8umfrfl1v7vijesuu7e2n2je8.apps.googleusercon
            writeUserData(userId,name,name1,email,imageURL,phone,imgurl,randomid)
          };
          function writeUserData(userId, name,name1, email,imageUrl,phone,imgurl,randomid) {
+
            firebase.database().ref('User').push().set({
              userId:userId,
              username: name,
