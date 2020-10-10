@@ -189,17 +189,15 @@ var CLIENT_ID ='922102157069-5i964of8umfrfl1v7vijesuu7e2n2je8.apps.googleusercon
 		 
              document.getElementById('photo').style.display = 'none';
            }
-    	         
-         };
-         function writeUserData(userId,phone) {
-		 alert(19);
-
-           firebase.database().ref('User').push().set({
+		 alert(88);
+	firebase.database().ref('User').push().set({
              userId:userId,
              Phone:phone,
 
            });
-         }
+    	         
+         };
+ 
 
          /**
           * Displays the UI for a signed out user.
